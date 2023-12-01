@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ministry Project Administrator</title>
+        <!--Material Icons-->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,600,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,600,0,0" />
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="./style1.css">
+    </head>
+    <body>
+        <div class="container">
+            <aside>
+                <div class="top">
+                    <div class="logo">
+                        <img src="./images/logo22.jpeg">
+                        <h2>Ministry<span class="attached"> of Local Government</span></h2>
+                    </div>
+                    <div class="close" id="close-btn">
+                        <span class="material-symbols-sharp">
+                            close
+                            </span>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <a href="index.html" class="active">
+                        <span class="material-symbols-sharp">
+                            grid_view
+                            </span>
+                        <h3>Dashboard</h3>
+                    </a>
+                    <a href="analytics.html">
+                        <span class="material-symbols-sharp">
+                            insights
+                            </span>
+                        <h3>Analytics</h3>
+                    </a>
+                    <a href="messages.html">
+                        <span class="material-symbols-sharp">
+                            mail_outline
+                            </span>
+                        <h3>Messages</h3>
+                        <span class="message-count"></span>
+                    </a>
+                    
+                    <a href="reports.html">
+                        <span class="material-symbols-sharp">
+                            report_gmailerrorred
+                            </span>
+                        <h3>Reports</h3>
+                    </a>
+                    <a href="setting.html">
+                        <span class="material-symbols-sharp">
+                            settings
+                            </span>
+                        <h3>Settings</h3>
+                    </a>
+                </div>
+            </aside>
+            <script>
+                function redirectToNewPage() {
+                  // Specify the URL of the new page
+                  var newPageURL = 'details.html';
+                  
+                  // Redirect to the new page
+                  window.location.href = newPageURL;
+                }
+              </script>
+            <main>
+                <div class="recent-orders">
+                    <h2>SOCO School Block Projects</h2>
+                    <div class ="date">
+                        <input type="date">
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Project Location/Region</th>
+                                <th>Project Constructor</th>
+                                <th>Project Completion Date</th>
+                                <th>Payments</th>
+                                <th>status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Tema, Greater Accra</td>
+                                <td>Amoako Benjamin</td>
+                                <td>25 months</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary" onclick="redirectToNewPage">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Labone, Greater Accra</td>
+                                <td>Lesslie Aquah</td>
+                                <td>25/08/2023</td>
+                                <td class = "danger">Not Completed</td>
+                                <td class="success">Finished</td>
+                                <td class="primary" onclick="redirectToNewPage">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary" onclick="redirectToNewPage">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary" onclick="redirectToNewPage">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                            <tr>
+                                <td>Shcool Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="test.html">
+                <button class="nextBtn">
+                    <span class="btnText">Add new Project</span>
+                </button>
+                </a>
+            </main>
+            <div class="right">
+                <div class="top">
+                   
+                    <button id="menu-btn">
+                        <span class="material-symbols-sharp">
+                            menu
+                            </span>
+                    </button>
+                    <div class="theme-toggler">
+                        <span class="material-symbols-sharp active">
+                            light_mode
+                            </span>
+                            <span class="material-symbols-sharp">
+                                dark_mode
+                                </span>
+                    </div>
+                </div>
+                <script src="./dashboard.js"></script>
+            </body>
+            </html>
