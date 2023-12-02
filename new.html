@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministry Project Administrator</title>
+    <!--Material Icons-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,600,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,600,0,0" />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class = "container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/logo22.jpeg">
+                    <h2>Ministry<span class="attached"> of Local Government</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-sharp">
+                        close
+                        </span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="index.html" class="active">
+                    <span class="material-symbols-sharp">
+                        grid_view
+                        </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="analytics.html">
+                    <span class="material-symbols-sharp">
+                        insights
+                        </span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="messages.html">
+                    <span class="material-symbols-sharp">
+                        mail_outline
+                        </span>
+                    <h3>Messages</h3>
+                    <span class="message-count"></span>
+                </a>
+                <a href="reports.html">
+                    <span class="material-symbols-sharp">
+                        report_gmailerrorred
+                        </span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="setting.html">
+                    <span class="material-symbols-sharp">
+                        settings
+                        </span>
+                    <h3>Settings</h3>
+                </a>
+                
+            </div>
+        </aside>
+        <!--------------END OF ASIDE-------------------->
+        <main>
+            <h1>Project Cordinating Unit Dashboard</h1>
+            <div class ="date">
+                <input type="date" id="currentDateInput">
+                <div class="recent-orders">
+                    <h2>SOCO School Block Projects</h2>
+                    <div class ="date">
+                        <input type="date">
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Project Location/Region</th>
+                                <th>Project Constructor</th>
+                                <th>Project Completion Date</th>
+                                <th>Payments</th>
+                                <th>status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Tema, Greater Accra</td>
+                                <td>Amoako Benjamin</td>
+                                <td>25 months</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary" onclick="redirectToNewPage">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Labone, Greater Accra</td>
+                                <td>Lesslie Aquah</td>
+                                <td>25/08/2023</td>
+                                <td class = "danger">Not Completed</td>
+                                <td class="success">Finished</td>
+                                <td class="primary" onclick="redirectToNewPage">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary" onclick="redirectToNewPage">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary" onclick="redirectToNewPage">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                            <tr>
+                                <td>School Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                            <tr>
+                                <td>Shcool Block</td>
+                                <td>Kumasi, Ashanti Region</td>
+                                <td>Winston Churchil</td>
+                                <td>08/07/2026</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                                <td class="primary">Update</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="test.html">
+                <button class="nextBtn">
+                    <span class="btnText">Add new Project</span>
+                </button>
+                </a>
+            <!------------------------END OF MAIN-------------------->
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-symbols-sharp">
+                        menu
+                        </span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-symbols-sharp active">
+                        light_mode
+                        </span>
+                        <span class="material-symbols-sharp">
+                            dark_mode
+                            </span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Project</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./images/profile.PNG" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-------------------END OF TOP------------------->
+            <div class="recent-updates">
+                <h2>Recent Updates</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="./images/profile.PNG" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Gordon</b> Completed the pickup</p>
+                            <small class="text-muted">2 hours ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="./images/profile.PNG" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Gordon</b> Completed the pickup</p>
+                            <small class="text-muted">2 hours ago</small>
+                        </div>
+                    </div><div class="update">
+                        <div class="profile-photo">
+                            <img src="./images/profile.PNG" alt="">
+                        </div>
+                        <div class="message">
+                            <p><b>Gordon</b> Completed the pickup</p>
+                            <small class="text-muted">2 hours ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!------------------------END OF RECENT UPDATES ------------------>
+            <div class="sales-analytics">
+                <h2>Upcoming Events</h2>
+                <div class="item online">
+                    <div class="icon">
+                    <span class="material-symbols-sharp">
+                        shopping_cart
+                        </span>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        <h3>Daily Requests</h3>
+                        <small class="text-muted">Last 24 Hours</small>
+                    </div>
+                    <h5 class="success">+45%</h5>
+                    <h3>4752</h3>
+                </div>
+            </div>
+            <div class="item offline">
+                <div class="icon">
+                <span class="material-symbols-sharp">
+                    local_mall
+                    </span>
+            </div>
+            <div class="right">
+                <div class="info">
+                    <h3>Cancelled Requests</h3>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <h5 class="danger">-2%</h5>
+                <h3>34</h3>
+            </div>
+        </div>
+        <div class="item cusotomers">
+            <div class="icon">
+            <span class="material-symbols-sharp">
+                person
+                </span>
+        </div>
+        <div class="right">
+            <div class="info">
+                <h3>New Customers</h3>
+                <small class="text-muted">Last 24 Hours</small>
+            </div>
+            <h5 class="success">+15%</h5>
+            <h3>752</h3>
+        </div>
+    </div>
+         </div>
+     </div>     
+ </div>
+ <script src="./dashboard.js"></script>
+ <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBsbNQIUJ4-m4AAdbO4ymvjFmzUkwJ2MnY",
+      authDomain: "ministry-of-local-government.firebaseapp.com",
+      projectId: "ministry-of-local-government",
+      storageBucket: "ministry-of-local-government.appspot.com",
+      messagingSenderId: "502845319442",
+      appId: "1:502845319442:web:2f114d60ac30f96ea5ebcb",
+      measurementId: "G-C60JF2R79V"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>
