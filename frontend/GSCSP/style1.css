@@ -351,7 +351,7 @@ main .recent-orders h2 {
 
 main .recent-orders table{
     background: var(--color-white);
-    width: 150%;
+    width: 75vw;
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     text-align: center;
