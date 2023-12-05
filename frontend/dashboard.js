@@ -8,12 +8,11 @@ const themeToggler = document.querySelector(".theme-toggler");
 // Get the current date
 const today = new Date();
 
-// Format the date
-const formattedDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
 // Set the current date in the input field
 const currentDateInputElement = document.getElementById('currentDateInput');
-currentDateInputElement.value = formattedDate;
+
+// Set the value of the date input field
+currentDateInputElement.valueAsDate = today;
 
 // show sidebar
 menuBtn.addEventListener('click',() => {
