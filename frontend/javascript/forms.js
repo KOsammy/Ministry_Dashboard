@@ -38,7 +38,7 @@ theForm.addEventListener("submit", (e)=>{
 async function save() {
 	try {
 		// make API request
-		const response = await fetch("http://localhost:3000/projects/SOCO", {
+		const response = await fetch("http://localhost:3000/projects/SOCO_water_dams", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

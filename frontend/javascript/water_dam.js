@@ -4,7 +4,7 @@ console.log({$tableBody})
 async function getTableData() {
 	try {
 		// make api request
-		const data = await fetch("http://localhost:3000/projects/SOCO", {
+		const data = await fetch("http://localhost:3000/projects/SOCO_water_dams", {
 			method: "GET",
 			headers: {
 				"content-type": "application/json",
