@@ -4,14 +4,14 @@ console.log({$tableBody})
 async function getTableData() {
 	try {
 		// make api request
-		const data = await fetch("http://localhost:3000/projects/UDG_1", {
+		const data = await fetch("http://localhost:3000/projects/udg2_Storm_Drains", {
 			method: "GET",
 			headers: {
 				"content-type": "application/json",
 				accept: "application/json",
 			},
 		});
-		// if the request mthod fails
+		// if the request method fails
 		if (data.status != 200) {
 			console.log("Failed to get table data", await data.json());
 		} else {

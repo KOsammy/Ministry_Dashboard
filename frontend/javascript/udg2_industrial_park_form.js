@@ -11,7 +11,7 @@ const $contractorNumber = document.getElementById("contractorNumber")
 const $consultantNumber = document.getElementById("consultantNumber")
 const $contractAmount = document.getElementById("contractAmount")
 const $amountPaid = document.getElementById("amountPaid")
-const theForm = document.querySelector("#transportform");
+const theForm = document.querySelector("#udg2_industrial_Park_form");
 
 console.log({theForm});
 
@@ -40,7 +40,7 @@ theForm.addEventListener("submit", (e)=>{
 async function save() {
 	try {
 		// make API request
-		const response = await fetch("http://localhost:3000/projects/UDG_1", {
+		const response = await fetch("http://localhost:3000/projects/ugd2_Industrial_park", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

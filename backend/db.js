@@ -9,7 +9,7 @@ db.serialize(() => {
 AllTables.forEach((table_name)=>{
 
 	db.run(
-		`create table if not exists ${table_name} (id int Auto_increment, project_name text, project_start text, project_end text, project_contractor text, project_consultant text, district text, region text, status text, amount_paid text, contract_amount text,contractor_phone_number text, consultant_phone_number text, image text)`
+		`create table if not exists ${table_name} (id int Auto_increment, region text, municipal_assembly text, type text, project_description text, project_name text, contract_description text, total_amount text, physical_work_completed text, status text, start_date text, original_duration text, expected_completion_date text, approved_time_extension text, revised_completion_date text)`
 	)
 
 });
@@ -20,35 +20,39 @@ AllTables.forEach((table_name)=>{
 //function to post data to a table based on the table name
 function postDataToTable(table_name, fields){
 	const {
+			projectRegion,
+			projectMunicipal,
+			projectType,
+			projectDescription,
 			projectName,
-			projectStart,
-			projectEndDate,
-			projectContractor,
-			region,
-			district,
+			contractDescription,
+			totalAmount,
+			workCompleted,
 			$status,
-			consultant,
-			contractAmount,
-			amountPaid,
+			startDate,
+			originalDuration,
+			expectedCompletionDate,
+			approvedAdditionalTime,
+			revisedCompletionDate,
 	} = fields
 	return new Promise((Resolve, Reject)=>{
 	db.run(
-		`insert into ${table_name} ( project_name, project_start, project_end, project_contractor, region, district, status, project_consultant, contract_amount, amount_paid,contractor_phone_number, consultant_phone_number, image) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+		`insert into ${table_name} ( region text, municipal_assembly text, type text, project_description text, project_name text, contract_description text, total_amount text, physical_work_completed text, status text, start_date text, original_duration text, expected_completion_date text, approved_time_extension text, revised_completion_date text) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 		[
+			projectRegion,
+			projectMunicipal,
+			projectType,
+			projectDescription,
 			projectName,
-			projectStart,
-			projectEndDate,
-			projectContractor,
-			region,
-			district,
+			contractDescription,
+			totalAmount,
+			workCompleted,
 			$status,
-			consultant,
-			contractAmount,
-			amountPaid,
-			//contract_amount text,contractor_phone_number text, consultant_phone_number text, image text
-			"0505995958",
-			"0595854994",
-			"teuueg"
+			startDate,
+			originalDuration,
+			expectedCompletionDate,
+			approvedAdditionalTime,
+			revisedCompletionDate,
 
 		],
 		(err, rows) => {
