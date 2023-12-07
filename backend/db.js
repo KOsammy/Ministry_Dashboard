@@ -9,7 +9,7 @@ db.serialize(() => {
 AllTables.forEach((table_name)=>{
 
 	db.run(
-		`create table if not exists ${table_name} (id int Auto_increment, region text, municipal_assembly text, type text, project_description text, project_name text, contract_description text, total_amount text, physical_work_completed text, status text, start_date text, original_duration text, expected_completion_date text, approved_time_extension text, revised_completion_date text)`
+		`create table if not exists ${table_name} (id int Auto_increment, Region text,	Municipal Assembly text, type text,	Project_description text, Project_name text, lot_no text, contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text,  Physical Works Completed text, Status text,	Start Date text, Original Duration mths text,	 Expected Completion Date text,	Completion Date	Approved text, Time Extension mths text, revised_Completion Date text)`
 	)
 
 });
@@ -37,7 +37,7 @@ function postDataToTable(table_name, fields){
 	} = fields
 	return new Promise((Resolve, Reject)=>{
 	db.run(
-		`insert into ${table_name} ( region text, municipal_assembly text, type text, project_description text, project_name text, contract_description text, total_amount text, physical_work_completed text, status text, start_date text, original_duration text, expected_completion_date text, approved_time_extension text, revised_completion_date text) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+		`insert into ${table_name} ( id int Auto_increment, Region text, Municipal Assembly text, type text, Project_description text, Project_name text, lot_no text, contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text,  Physical Works Completed text, Status text,	Start Date text, Original Duration mths text,	 Expected Completion Date text,	Completion Date	Approved text, Time Extension mths text, revised_Completion Date text) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)`,
 		[
 			projectRegion,
 			projectMunicipal,
