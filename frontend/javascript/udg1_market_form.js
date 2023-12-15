@@ -10,6 +10,7 @@ const $consultant = document.getElementById("consultantName")
 const $contractorNumber = document.getElementById("contractorNumber")
 const $consultantNumber = document.getElementById("consultantNumber")
 const $contractAmount = document.getElementById("contractAmount")
+const $projectDescription = document.getElementById("description") 
 const $amountPaid = document.getElementById("amountPaid")
 const theForm = document.querySelector("#marketform");
 
@@ -47,11 +48,11 @@ async function save() {
 				accept: "application/json",
 			},
 			body: JSON.stringify({
-				projectName: $projectName.value,
+				Project_name: $projectName.value,
 				projectStart: $projectStart.value,
 				projectEndDate: $projectEndDate.value,
 				projectContractor: $projectContractor.value,
-				region: $region.value,
+				Region: $region.value,
 				district: $district.value,
 				$status: $$status.value,
 				consultant: $consultant.value,
