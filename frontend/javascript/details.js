@@ -1,10 +1,10 @@
-const $tableBody = window.document.querySelector("#data"); // html selector
+const $tableBody = window.document.querySelector("#data1"); // html selector
 
 console.log({$tableBody})
 async function getTableData() {
 	try {
 		// make api request
-		const data = await fetch("http://localhost:3000/projects/UDG_2", {
+		const data = await fetch("http://localhost:3000/projects/UDG_1", {
 			method: "GET",
 			headers: {
 				"content-type": "application/json",
@@ -20,11 +20,11 @@ async function getTableData() {
 			const content = await data.json();
 			console.log("response data ", content);
 			const filteredContent = content.filter((element) => {
-				// Filter based on project_name property containing "olid Waste Management"
-				return element.Project_name.includes("Solid Waste Management");
+				// Filter based on project_name property containing "Transport Terminal"
+				return element.Project_name.includes("Transport Terminal");
 			});
 			filteredContent.forEach((element) => {
-					$tableBody.innerHTML+=`<tr onclick="window.location.href='details.html'">
+					$tableBody.innerHTML+=`<tr>
 					<td>${element.Project_name}</td>
 					<td>${element.Region}</td>
 					<td>${element.contractor}</td>
