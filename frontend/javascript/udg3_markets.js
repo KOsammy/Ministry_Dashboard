@@ -4,7 +4,7 @@ console.log({$tableBody})
 async function getTableData() {
 	try {
 		// make api request
-		const data = await fetch("http://localhost:3000/projects/UDG_1", {
+		const data = await fetch("http://localhost:3000/projects/UDG_3", {
 			method: "GET",
 			headers: {
 				"content-type": "application/json",
@@ -20,18 +20,18 @@ async function getTableData() {
 			const content = await data.json();
 			console.log("response data ", content);
 			const filteredContent = content.filter((element) => {
-				// Filter based on project_name property containing "Road"
-				return element.Project_name.includes("Storm Water Drain");
+				// Filter based on project_name property containing "Market"
+				return element.Project_name.includes("Market");
 			});
 			filteredContent.forEach((element) => {
 					$tableBody.innerHTML+=`<tr onclick="window.location.href='details.html'">
 					<td>${element.Project_name}</td>
 					<td>${element.Region}</td>
 					<td>${element.contractor}</td>
-					<td>${element.Time}</td>
+					<td>${element.revised_Completion}</td>
 					<td>${element.Municipal}</td>
-					<td>${element.Revised}</td>
 					<td>${element.Status}</td>
+					<td>${element.Expected}</td>
 					<td>
 					<button class="button">Update</button>
 				</td>

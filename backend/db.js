@@ -9,7 +9,7 @@ db.serialize(() => {
 AllTables.forEach((table_name)=>{
 
 	db.run(
-		`create table if not exists ${table_name} (id int Auto_increment, Region text,	Municipal Assembly text, type text,	Project_description text, Project_name text, lot_no text, contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text,  Physical Works Completed text, Status text,	Start Date text, Original Duration mths text,	 Expected Completion Date text,	Completion Date	Approved text, Time Extension mths text, revised_Completion Date text)`
+		`create table if not exists ${table_name} (id int Auto_increment, Region text, Municipal_Assembly text, type text, Project_description text, Project_name text, lot_no text, contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text, Approved_Cost text, Revised_Cost text,  Physical_Works_Completed text, Status text,	Start Date text, Original_Duration mths text, Expected_Completion_Date text, Completion_Date Approved text, Time_Extension_mths text, revised_Completion_Date text)`
 	)
 
 });
@@ -25,8 +25,12 @@ function postDataToTable(table_name, fields){
 			projectType,
 			projectDescription,
 			projectName,
+			lotNo,
+			contractor,
 			contractDescription,
 			totalAmount,
+			approvedCost,
+			revisedCost,
 			workCompleted,
 			$status,
 			startDate,
@@ -37,15 +41,19 @@ function postDataToTable(table_name, fields){
 	} = fields
 	return new Promise((Resolve, Reject)=>{
 	db.run(
-		`insert into ${table_name} ( id int Auto_increment, Region text, Municipal Assembly text, type text, Project_description text, Project_name text, lot_no text, contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text,  Physical Works Completed text, Status text,	Start Date text, Original Duration mths text,	 Expected Completion Date text,	Completion Date	Approved text, Time Extension mths text, revised_Completion Date text) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)`,
+		`insert into ${table_name} ( id int Auto_increment, Region text, Municipal_Assembly text, type text, Project_description text, Project_name text, lot_no text, contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text, Approved_Cost text, Revised_Cost text,  Physical_Works_Completed text, Status text,	Start Date text, Original_Duration mths text, Expected_Completion_Date text, Completion_Date Approved text, Time_Extension_mths text, revised_Completion_Date text) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 		[
 			projectRegion,
 			projectMunicipal,
 			projectType,
 			projectDescription,
 			projectName,
+			lotNo,
+			contractor,
 			contractDescription,
 			totalAmount,
+			approvedCost,
+			revisedCost,
 			workCompleted,
 			$status,
 			startDate,
