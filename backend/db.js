@@ -9,7 +9,7 @@ db.serialize(() => {
 AllTables.forEach((table_name)=>{
 
 	db.run(
-		`create table if not exists ${table_name} (id int Auto_increment, Region text, Municipal_Assembly text, type text, Project_description text, Project_name text, lot_no text, contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text, Approved_Cost text, Revised_Cost text,  Physical_Works_Completed text, Status text,	Start Date text, Original_Duration mths text, Expected_Completion_Date text, Completion_Date Approved text, Time_Extension_mths text, revised_Completion_Date text)`
+		`create table if not exists ${table_name} (id int Auto_increment, Region text, Municipal_Assembly text, type text, Project_description text, Project_name text,  contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text, Approved_Cost text, Revised_Cost text,  Physical_Works_Completed text, Status text,	Start Date text, Original_Duration mths text, Expected_Completion_Date text, Completion_Date Approved text, Time_Extension_mths text, revised_Completion_Date text)`
 	)
 
 });
@@ -25,7 +25,6 @@ function postDataToTable(table_name, fields){
 			projectType,
 			projectDescription,
 			projectName,
-			lotNo,
 			contractor,
 			contractDescription,
 			totalAmount,
@@ -41,14 +40,13 @@ function postDataToTable(table_name, fields){
 	} = fields
 	return new Promise((Resolve, Reject)=>{
 	db.run(
-		`insert into ${table_name} ( id int Auto_increment, Region text, Municipal_Assembly text, type text, Project_description text, Project_name text, lot_no text, contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text, Approved_Cost text, Revised_Cost text,  Physical_Works_Completed text, Status text,	Start Date text, Original_Duration mths text, Expected_Completion_Date text, Completion_Date Approved text, Time_Extension_mths text, revised_Completion_Date text) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+		`insert into ${table_name} ( id, Region, Municipal_Assembly, type, Project_description, Project_name, lot_no, contractor, Description_of_Contract, Total_Contract_Amount_GH₵ , Approved_Cost, Revised_Cost,  Physical_Works_Completed, Status,	Start Date, Original_Duration mths, Expected_Completion_Date, Completion_Date Approved, Time_Extension_mths, revised_Completion_Date) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 		[
 			projectRegion,
 			projectMunicipal,
 			projectType,
 			projectDescription,
 			projectName,
-			lotNo,
 			contractor,
 			contractDescription,
 			totalAmount,
@@ -88,5 +86,16 @@ function getTableData(table_name){
 	})
 }
 
+function getTableItem(table_name, id){
+	return new Promise((Resolve, Reject)=>{
+		db.get(`SELECT * FROM ${table_name} WHERE id = '${id}' `, (err, rows) => {
+			if (err) {
+				return Reject(err);
+			}
+			return Resolve(rows);
+		});
+	})
+}
 
-module.exports = {getTableData, postDataToTable};
+
+module.exports = {getTableData, postDataToTable, getTableItem};

@@ -1,6 +1,7 @@
 const $tableBody = window.document.querySelector("#data1"); // html selector
 
-console.log({$tableBody})
+
+
 async function getTableData() {
 	try {
 		// make api request

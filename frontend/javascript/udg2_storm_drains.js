@@ -4,14 +4,14 @@ console.log({$tableBody})
 async function getTableData() {
 	try {
 		// make api request
-		const data = await fetch("http://localhost:3000/projects/udg2_Storm_Drains", {
+		const data = await fetch("http://localhost:3000/projects/UDG_2", {
 			method: "GET",
 			headers: {
 				"content-type": "application/json",
 				accept: "application/json",
 			},
 		});
-		// if the request method fails
+		// if the request mthod fails
 		if (data.status != 200) {
 			console.log("Failed to get table data", await data.json());
 		} else {
@@ -19,22 +19,27 @@ async function getTableData() {
 			// if the request method passes
 			const content = await data.json();
 			console.log("response data ", content);
-				content.forEach(element => {
+			const filteredContent = content.filter((element) => {
+				// Filter based on project_name property containing "Road"
+				
+				return element.Project_name.includes("Storm Water Drain");
+			});
+			console.log({filteredContent})
+			filteredContent.forEach((element) => {
 					$tableBody.innerHTML+=`<tr onclick="window.location.href='details.html'">
-					<td>${element.project_name}</td>
-					<td>${element.district}</td>
-					<td>${element.project_contractor}</td>
-					<td>${element.project_consultant}</td>
-					<td>${element.project_start}</td>
-					<td>${element.contract_amount}</td>
-					<td>${element.amount_paid}</td>
-					<td>${element.status}</td>
+					<td>${element.Project_name}</td>
+					<td>${element.Region}</td>
+					<td>${element.contractor}</td>
+					<td>${element.Revised_Cost}</td>
+					<td>${element.Municipal_Assembly}</td>
+					<td>${element.Description_of_Contract}</td>
+					<td>${element.Approved_Cost}</td>
 					<td>
 					<button class="button">Update</button>
 				</td>
-				</tr>`
+				</tr>
+				`;
 				});
-			
 		}
 	} catch (err) {
 		// an error in the request.

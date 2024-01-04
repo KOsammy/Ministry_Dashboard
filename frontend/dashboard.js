@@ -5,6 +5,24 @@ const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
 const themeToggler = document.querySelector(".theme-toggler");
 
+function filterTable() {
+    const searchTerm = document.getElementById("search-bar").value.toLowerCase();
+    const rows = document.querySelectorAll("#data tbody tr");
+    // console.log("in the filter table function")
+    for (const row of rows) {
+      const Project_name = row.querySelector("td:nth-child(1)").textContent.toLowerCase();
+      console.log("the serach is true", Project_name.includes(searchTerm));
+      if (!Project_name.includes(searchTerm)) {
+        row.style.display = "none"; // Hide rows that don't match the search term
+      } else {
+        row.style.display = ""; // Show rows that match the search term
+      }
+    }
+  }
+ // const searchBar = document.getElementById("search-bar");
+//searchBar.addEventListener("keydown", filterTable);
+// console.log({searchBar})
+
 // Get the current date
 const today = new Date();
 
@@ -49,46 +67,46 @@ projectData = document.getElementById("data")
 let getData = localStorage.getItem('projectInfo') ? JSON.parse(localStorage.getItem('projectInfo')) : []
 
 let isData = false, editId
-file.onChange = function() {
-    if(file.files[0].size < 1000000){
-        var fileReader = new FileReader();
-         fileReader.onload = function(e){
-            imgUrl = e.target.result
-            imgInput.src = imgUrl
-         }
-         fileReader.readAsDataURL(file.files[0])
-    }
-    else {
-        alert("This file size is too large")
-    }
-}
- form.addEventListener('submit', (e)=> {
-    e.preventDefault()
+// file.onChange = function() {
+//     if(file.files[0].size < 1000000){
+//         var fileReader = new FileReader();
+//          fileReader.onload = function(e){
+//             imgUrl = e.target.result
+//             imgInput.src = imgUrl
+//          }
+//          fileReader.readAsDataURL(file.files[0])
+//     }
+//     else {
+//         alert("This file size is too large")
+//     }
+// }
+//  form.addEventListener('submit', (e)=> {
+//     e.preventDefault()
 
-    const info = {
-        projectName: projectName.value,
-        startDate: startDate.value,
-        endDate: endDate.value,
-        contractorName: contractorName.value,
-        consultantName: consultantName.value,
-        region: region.value,
-        district: district.value,
-        amount: amount.value,
-        amountPaid: amountPaid.value,
-        balancedue: balancedue.value,
-        }
+//     const info = {
+//         projectName: projectName.value,
+//         startDate: startDate.value,
+//         endDate: endDate.value,
+//         contractorName: contractorName.value,
+//         consultantName: consultantName.value,
+//         region: region.value,
+//         district: district.value,
+//         amount: amount.value,
+//         amountPaid: amountPaid.value,
+//         balancedue: balancedue.value,
+//         }
 
-        if(!isEdit){
-            getData.push(info)
-        }
-        else {
-            isEdit = false
-            getData[editId] = info
-        }
+//         if(!isEdit){
+//             getData.push(info)
+//         }
+//         else {
+//             isEdit = false
+//             getData[editId] = info
+//         }
 
-        localStorage.setItem('projectInfo', JSON.stringify(getData));
+//         localStorage.setItem('projectInfo', JSON.stringify(getData));
 
- })
+//  })
 
 
 

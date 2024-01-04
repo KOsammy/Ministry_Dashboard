@@ -21,17 +21,19 @@ async function getTableData() {
 			console.log("response data ", content);
 			const filteredContent = content.filter((element) => {
 				// Filter based on project_name property containing "Road"
+				
 				return element.Project_name.includes("Road");
 			});
+			console.log({filteredContent})
 			filteredContent.forEach((element) => {
 					$tableBody.innerHTML+=`<tr onclick="window.location.href='details.html'">
 					<td>${element.Project_name}</td>
 					<td>${element.Region}</td>
 					<td>${element.contractor}</td>
-					<td>${element.revised_Completion}</td>
-					<td>${element.Municipal}</td>
-					<td>${element.Status}</td>
-					<td>${element.Expected}</td>
+					<td>${element.Revised_Cost}</td>
+					<td>${element.Municipal_Assembly}</td>
+					<td>${element.Description_of_Contract}</td>
+					<td>${element.Approved_Cost}</td>
 					<td>
 					<button class="button">Update</button>
 				</td>

@@ -27,11 +27,11 @@ async function getTableData() {
 					$tableBody.innerHTML+=`<tr onclick="window.location.href='details.html'">
 					<td>${element.Project_name}</td>
 					<td>${element.Region}</td>
-					<td>${element.contractor}</td>
-					<td>${element.revised_Completion}</td>
-					<td>${element.Municipal}</td>
+					<td>${element.Project_description}</td>
+					<td>${element.Completion_Date}</td>
+					<td>${element.Municipal_Assembly}</td>
+					<td>${element.Total_Contract_Amuont_GHS}</td>
 					<td>${element.Status}</td>
-					<td>${element.Expected}</td>
 					<td>
 					<button class="button">Update</button>
 				</td>

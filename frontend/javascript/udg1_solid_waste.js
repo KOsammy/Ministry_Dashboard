@@ -28,10 +28,10 @@ async function getTableData() {
 					<td>${element.Project_name}</td>
 					<td>${element.Region}</td>
 					<td>${element.contractor}</td>
-					<td>${element.revised_Completion}</td>
-					<td>${element.Municipal}</td>
+					<td>${element.Time_Extension_mths}</td>
+					<td>${element.Municipal_Assembly}</td>
+					<td>${element.Revised_Cost}</td>
 					<td>${element.Status}</td>
-					<td>${element.Expected}</td>
 					<td>
 					<button class="button">Update</button>
 				</td>

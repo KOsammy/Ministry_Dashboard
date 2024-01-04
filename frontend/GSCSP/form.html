@@ -6,89 +6,129 @@
         <meta name="viewport" content="device-width, initial-scale = 1.0">
         <link rel="stylesheet"href ="form.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
         <link rel="stylesheet" href="https://unicorns.iconscout.com/release/v4.0.0/css/line.css">
         
     </head>
     <body>
-        
         <div class="container">
-            <h2>SOCO Project Registration Form</h2>
+            <h2>GSCSP Project Registration Form</h2>
             <header>Add New Project</header>
-            <form action="#">
-            <div class="form first">
-                <div class="details personal">
-                    <span class="Project Deatails">
-                    </span>
-                    <div class="fields">
-                        <div class = "input-field">
-                            <label>Project Name</label>
-                            <input type="text" placeholder="Enter Project Name" required>
+            <form method="post" id="projectform">
+                <div class="form first">
+                   <div class="details personal">
+                       <span class="Project Details">
+                       </span>
+                       <div class="fields">
+                           <div class = "input-field">
+                               <label>Project Name</label>
+                               <select id="projectName" name="projectName" placeholder="Enter Project Name" required >
+                                   <option value = "please_select">--Select Project Type</option>
+                                   <option value="water_dam">Water Dam</option>
+                                   <option value="schoolblock">School Block</option>
+                                   <option value="chip_compound">Chip Compound</option>
+                                   <option value="community_center">Community Center</option>
+                                   <option value="market_structure">Market Structure</option>
+                                   <option value="library">Library</option>
+                                   <option value="youth_center">Youth Center</option>
+                                   <option value="roads">Roads</option>
+                                   <option value="culvert">Culvert</option>
+                                   <option value="water_system">Water System</option>
+                                   <option value="boreholes">Boreholes</option>
+                                   <option value="toilets">Toilets</option>
+                                   <option value="footbrigde">FootBrigde</option>
+                                   <option value="urbanParks">Urban Park</option>
+                                   <option value="agroProcessing">Agro-Processing</option>
+                                   <option value="streetLights">Street Lights</option>
+                               </select>
+                           </div>
+                           <div class = "input-field">
+                               <label>Date of Commencement</label>
+                               <input type="date" id="startDate" name="startDate" placeholder="Enter Date of Commencement" required>
+                           </div>
+                           <div class = "input-field">
+                               <label>Date of Completion</label>
+                               <input type="date" id="endDate" name="startDate" placeholder="Enter Date of Completion" required>
+                           </div>
+                           <div class = "input-field">
+                               <label>Project Constructor Name</label>
+                               <input type="text" id="contractorName" name="contractorName" placeholder="Enter Constructor Name" required>
+                           </div>
+                           <div class = "input-field">
+                               <div class = "input-field">
+                                   <label>Project Region</label>
+                                   <select id="region" placeholder="Select Project Region" name="region" required>
+                                       <option value="please_select">--Select Region--</option>
+                                       <option value="Greater_Accra">Greater Accra Region</option>
+                                       <option value="Ashanti">Ashanti Region</option>
+                                       <option value="Eastern">Eastern Region</option>
+                                       <option value="Western">Western Region</option>
+                                       <option value="Northern">Greater Accra Region</option>
+                                       <option value="Central">Central Region</option>
+                                       <option value="Volta">Volta Region</option>
+                                       <option value="Upper_East">Upper East Region</option>
+                                       <option value="Upper_West">Upper West Region</option>
+                                       <option value="Bono">Bono Region</option>
+                                       <option value="Bono_East">Bono East Region</option>
+                                       <option value="Ahafo">Ahafo Region</option>
+                                       <option value="Oti">Oti Region</option>
+                                       <option value="Savannah">Savannah Region</option>
+                                       <option value="Weatern_North">Western North Region</option>
+                                       <option value="North_East">North East Region</option>
+                                   </select>
+                               </div>
+                           </div>
+                           <div class = "input-field">
+                               <label>Select District</label>
+                               <input type="text" id="district" placeholder="Enter The District" required>
+                           </div>
+                           <div class = "input-field">
+                               <label>Status</label>
+                               <select id="status" name="status" placeholder="Select Project status" required>
+                                   <option value="Not_Started">Not Started</option>
+                                   <option value = "Ongoing">In Progress</option>
+                                   <option value = "Completed">Completed</option>
+                                   </select>
+                           </div>
+                           <div class = "input-field">
+                               <label>Project Consultant Name</label>
+                               <input type="text" id="consultantName" name="consultantName" placeholder="Enter Consultant's Name" required>
+                           </div>
+                           <div class = "input-field">
+                            <label>Project Description</label>
+                            <input type="text" id="consultantName" name="consultantName" placeholder="Enter Project Description" required>
                         </div>
                         <div class = "input-field">
-                            <label>Date of Commencement</label>
-                            <input type="date" placeholder="Enter Date of Commencement" required>
+                            <label>Project Lot_No.</label>
+                            <input type="text" id="consultantName" name="consultantName" placeholder="Enter Lot Number" required>
                         </div>
                         <div class = "input-field">
-                            <label>Date of Completion</label>
-                            <input type="date" placeholder="Enter Date of Completion" required>
+                            <label>Description Of Contract</label>
+                            <input type="text" id="consultantName" name="consultantName" placeholder="Enter Description of Contract" required>
                         </div>
-                        <div class = "input-field">
-                            <label>Project Constructor Name</label>
-                            <input type="text" placeholder="Enter Constructor Name" required>
-                        </div>
-                        <div class = "input-field">
-                            <div class = "input-field">
-                                <label>Project Region</label>
-                                <select  placeholder="Select Project Region" required>
-                                    <option value="please_select">--Select Region--</option>
-                                    <option value="Greater_Accra">Greater Accra Region</option>
-                                    <option value="Ashanti">Ashanti Region</option>
-                                    <option value="Eastern">Eastern Region</option>
-                                    <option value="Western">Western Region</option>
-                                    <option value="Northern">Greater Accra Region</option>
-                                    <option value="Central">Central Region</option>
-                                    <option value="Volta">Volta Region</option>
-                                    <option value="Upper_East">Upper East Region</option>
-                                    <option value="Upper_West">Upper West Region</option>
-                                    <option value="Bono">Bono Region</option>
-                                    <option value="Bono_East">Bono East Region</option>
-                                    <option value="Ahafo">Ahafo Region</option>
-                                    <option value="Oti">Oti Region</option>
-                                    <option value="Savannah">Savannah Region</option>
-                                    <option value="Weatern_North">Western North Region</option>
-                                    <option value="North_East">North East Region</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class = "input-field">
-                            <label>Select District</label>
-                            <select>
-                                <option value="Bono">Bono Region</option>
-                                <option value="Bono_East">Bono East Region</option>
-                                <option value="Ahafo">Ahafo Region</option>
-                            </select>
-                        </div>
-                        <div class = "input-field">
-                            <label>Status</label>
-                            <select placeholder="Select Prject status" required>
-                                <option value="Not_Started">Not Started</option>
-                                <option value = "In progress">In Progress</option>
-                                <option value = "Completed">Completed</option>
-                                </select>
+                           <div class="input-field">
+                               <label>Total Contract Amount</label>
+                               <input type="text" id="contractAmount" name="contractAmount" placeholder="Enter Total Contract Amount" required>
+                           </div>
+                           <div class = "input-field">
+                            <label>Original Timeline</label>
+                            <input type="text" id="consultantName" name="consultantName" placeholder="Enter Original Timeline" required>
                         </div>
                         <div class = "input-field">
                             <label>Project Consultant Name</label>
-                            <input type="text" placeholder="Enter Consultant's Name" required>
+                            <input type="text" id="consultantName" name="consultantName" placeholder="Enter Consultant's Name" required>
                         </div>
-                    </div>
-                    <button class="nextBtn">
-                        <span class="btnText">Save</span>
-                    </button>
-                </div>
-            </div>
-        </form>
+                           <div class="input-field">
+                               <label>Approved Revised Contract</label>
+                               <input type="text" id="amountPaid" name="amountPaid" placeholder="Enter Approved Reveised Contract" required>
+                           </div>
+                       </div>
+                       <button class="nextBtn" id="submit" form="projectform" onclick="save()">
+                           <span class="btnText">Save</span>
+                       </button>
+                   </div>
+               </div>
+           </form>
         </div>
     </body>
 </html>

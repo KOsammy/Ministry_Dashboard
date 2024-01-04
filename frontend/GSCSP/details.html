@@ -66,7 +66,7 @@
 
             <main>
                 <div class="recent-orders">
-                    <h2>GSCSP Market Project Details</h2>
+                    <h2>GSCSP Project Details</h2>
                     <div class ="date">
                         <input type="date">
                     </div>
@@ -78,48 +78,59 @@
                                 <th>Project Contractor</th>
                             </tr>
                         </thead>
-                        <tbody id="data1">
+                        <tbody id="detailedData">
                             <tr>
-                                <td>Market Structure</td>
-                            <td>Greater Accra,Tema West</td>
-                            <td>Lawrencia Nkurmah</td>
+                                <td id="project_name">Market Structure</td>
+                            <td id="region">Greater Accra,Tema West</td>
+                            <td id="contractor">Lawrencia Nkurmah</td>
                             </tr>
                             <tr>
                                 <th>Project Description</th>
-                                <th>Total Amount</th>
                                 <th>Municipal Assembly</th>
+                                <th>Lot Number</th>
                             </tr>
                             <tr>
-                                <td>+23305566777</td>
-                            <td>Alec Quansh</td>
-                            <td>0243454555</td>
+                                <td id="project_Description">+23305566777</td>
+                            <td id="municipal_Assembly">Alec Quansh</td>
+                            <td id="lot_no">0243454555</td>
                             </tr>
                             <tr>
-                                <th>Project Start Date</th>
-                                <th>Project End Date</th>
+                                
+                                <th>Contract Amount</th>
                                 <th>Approved Net Additional Cost</th>
+                                <th>Expected Completion Date</th>
                             </tr>
                             <tr>
-                                <td>02/11/2023</td>
-                            <td>02/11/2026</td>
-                            <td>GHS 400,000.00</td>
+                                
+                            <td id="total_contract_amount">02/11/2026</td>
+                            <td id="approved_amount">GHS 400,000.00</td>
+                            <td id="expected_completion_date">GHS 400,000.00</td>
                             </tr>
-                            <tr>
-                                <th>Project Status</th>
-                                <th>Physical Works</th>
-                                <th>Reviced Cost</th>
-                            </tr>
-
-                            <tr>
-                                <td>02/11/2023</td>
-                            <td>02/11/2026</td>
-                            <td>GHS 400,000.00</td>
-                            </tr>
+                            
                             <tr>
                                 <th>Project Status</th>
                                 <th>Physical Works</th>
-                                <th>Reviced Cost</th>
+                                <th>Revised Cost</th>
                             </tr>
+                            <tr>
+                                <td id="status">02/11/2023</td>
+                            <td id="physical_works">02/11/2026</td>
+                            <td id="revised_Amount">GHS 400,000.00</td>
+                            </tr>
+                            <tr>
+                                <th>Start Date</th>
+                                <th>Original Timeline</th>
+                                
+                            </tr>
+                            <tr>
+                                <td id="start_date">02/11/2023</td>
+                            <td id="original_timeline">02/11/2026</td>
+                            
+                            </tr>
+                                <tr>
+                                    <th>Description of Contract</th>
+                                    <td id="description_of_contract">02/11/2023</td>
+                                </tr>
                         </tbody>
                     </table>
                     <div class="button">
@@ -127,7 +138,31 @@
                         <button>Update Details</button>
                         </a>
                     </div>
+                    <h2>Check Logs </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                               
+                                <th>Date Updated</th>
+                                <th>Completion Date Extension</th>
+                                <th>Revised Cost</th>
+                                <th>Physical Works</th>
+                                <th>status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data">
+                            <tr>
+                                
+                                <td>25 months</td>
+                                <td>settled</td>
+                                <td class="success">Finished</td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+                
                 </div>
+                   
             </main>
             <div class="right">
                 <div class="top">
@@ -146,6 +181,7 @@
                                 </span>
                     </div>
                 </div>
-                <script src="./dashboard.js"></script>
+                <!-- <script src="../dashboard.js"></script> -->
+                <script src="../details.js"></script>
             </body>
             </html>

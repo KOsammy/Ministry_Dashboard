@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const { postDataToTable, getTableData } = require("./db");
+const { postDataToTable, getTableData, getTableItem } = require("./db");
 
 console.log("env data ", process.env.PROJECT_TABLES);
 
@@ -12,7 +12,7 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-// Express route to fetch users from the database
+// get a table from table 
 app.get("/projects/:table_name", (req, res) => {
 	const { table_name } = req.params;
 	if (!table_name)
@@ -20,6 +20,17 @@ app.get("/projects/:table_name", (req, res) => {
 
 	getTableData(table_name)
 		.then((rows) => res.json(rows))
+		.catch((er) => res.status(400).send(er.message));
+});
+
+
+app.get("/projects/:table_name/:project_id", (req, res) => {
+	const { table_name, project_id } = req.params;
+	if (!table_name)
+		return res.status(400).send("Please provide a valid table name");
+
+	getTableItem(table_name, project_id)
+		.then((row) => res.json(row))
 		.catch((er) => res.status(400).send(er.message));
 });
 
