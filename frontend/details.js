@@ -31,7 +31,7 @@ async function getProjectDetails() {
     try {
       const response = await fetch(`http://localhost:3000/projects/${project_name_to_update}/${project_item_to_update}`, {
         method: "GET",
-        headers: {
+        headers: {    
           "content-type": "application/json",
         },
       });
