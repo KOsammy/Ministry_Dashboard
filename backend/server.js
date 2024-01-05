@@ -1,7 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const { postDataToTable, getTableData, getTableItem } = require("./db");
+const {
+	postDataToTable,
+	getTableData,
+	getTableItem,
+	updateRowData,
+} = require("./db");
 
 console.log("env data ", process.env.PROJECT_TABLES);
 
@@ -12,7 +17,7 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-// get a table from table 
+// get a table from table
 app.get("/projects/:table_name", (req, res) => {
 	const { table_name } = req.params;
 	if (!table_name)
@@ -22,7 +27,6 @@ app.get("/projects/:table_name", (req, res) => {
 		.then((rows) => res.json(rows))
 		.catch((er) => res.status(400).send(er.message));
 });
-
 
 app.get("/projects/:table_name/:project_id", (req, res) => {
 	const { table_name, project_id } = req.params;
@@ -58,6 +62,8 @@ app.post("/projects/:table_name", (req, res) => {
 		.then((status) => res.send(status))
 		.catch((er) => res.status(400).send(er.message));
 });
+
+app.put("/api/update/projects/:table_name/:row_id", updateRowData);
 
 // Start the Express server
 app.listen(port, () => {
