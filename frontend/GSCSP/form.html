@@ -22,6 +22,8 @@
                        <div class="fields">
                            <div class = "input-field">
                                <label>Project Name</label>
+															 <input type="text" id="projectName" name="projectName" placeholder="Enter project name" required/>
+															 <!-- 
                                <select id="projectName" name="projectName" placeholder="Enter Project Name" required >
                                    <option value = "please_select">--Select Project Type</option>
                                    <option value="water_dam">Water Dam</option>
@@ -41,40 +43,41 @@
                                    <option value="agroProcessing">Agro-Processing</option>
                                    <option value="streetLights">Street Lights</option>
                                </select>
+															 -->
                            </div>
                            <div class = "input-field">
                                <label>Date of Commencement</label>
-                               <input type="date" id="startDate" name="startDate" placeholder="Enter Date of Commencement" required>
+                               <input type="date" id="startDate" name="startDate" placeholder="Enter Date of Commencement" required pattern="\d{2}-\d{2}-\d{2}">
                            </div>
                            <div class = "input-field">
                                <label>Date of Completion</label>
-                               <input type="date" id="endDate" name="startDate" placeholder="Enter Date of Completion" required>
+                               <input type="date" id="endDate" name="endDate" placeholder="Enter Date of Completion" required pattern="\d{2}-\d{2}-\d{2}">
                            </div>
                            <div class = "input-field">
-                               <label>Project Constructor Name</label>
-                               <input type="text" id="contractorName" name="contractorName" placeholder="Enter Constructor Name" required>
+                               <label>Project Contractor Name</label>
+                               <input type="text" id="contractor" name="contractorName" placeholder="Enter Constructor Name" required>
                            </div>
                            <div class = "input-field">
                                <div class = "input-field">
                                    <label>Project Region</label>
                                    <select id="region" placeholder="Select Project Region" name="region" required>
                                        <option value="please_select">--Select Region--</option>
-                                       <option value="Greater_Accra">Greater Accra Region</option>
+                                       <option value="Greater Accra">Greater Accra Region</option>
                                        <option value="Ashanti">Ashanti Region</option>
                                        <option value="Eastern">Eastern Region</option>
                                        <option value="Western">Western Region</option>
                                        <option value="Northern">Greater Accra Region</option>
                                        <option value="Central">Central Region</option>
                                        <option value="Volta">Volta Region</option>
-                                       <option value="Upper_East">Upper East Region</option>
-                                       <option value="Upper_West">Upper West Region</option>
+                                       <option value="Upper East">Upper East Region</option>
+                                       <option value="Upper West">Upper West Region</option>
                                        <option value="Bono">Bono Region</option>
-                                       <option value="Bono_East">Bono East Region</option>
+                                       <option value="Bono East">Bono East Region</option>
                                        <option value="Ahafo">Ahafo Region</option>
                                        <option value="Oti">Oti Region</option>
                                        <option value="Savannah">Savannah Region</option>
-                                       <option value="Weatern_North">Western North Region</option>
-                                       <option value="North_East">North East Region</option>
+                                       <option value="Weatern North">Western North Region</option>
+                                       <option value="North East">North East Region</option>
                                    </select>
                                </div>
                            </div>
@@ -90,38 +93,66 @@
                                    <option value = "Completed">Completed</option>
                                    </select>
                            </div>
+													 <!-- 
                            <div class = "input-field">
                                <label>Project Consultant Name</label>
                                <input type="text" id="consultantName" name="consultantName" placeholder="Enter Consultant's Name" required>
                            </div>
+													 -->
                            <div class = "input-field">
                             <label>Project Description</label>
-                            <input type="text" id="consultantName" name="consultantName" placeholder="Enter Project Description" required>
+                            <input type="text" id="projectDescription" name="projectDescription" placeholder="Enter Project Description" required>
                         </div>
+												<!-- 
                         <div class = "input-field">
                             <label>Project Lot_No.</label>
                             <input type="text" id="consultantName" name="consultantName" placeholder="Enter Lot Number" required>
                         </div>
+												-->
                         <div class = "input-field">
                             <label>Description Of Contract</label>
-                            <input type="text" id="consultantName" name="consultantName" placeholder="Enter Description of Contract" required>
+                            <input type="text" id="descriptionOfContract" name="descriptionOfContract" placeholder="Enter Description of Contract" required>
                         </div>
                            <div class="input-field">
                                <label>Total Contract Amount</label>
-                               <input type="text" id="contractAmount" name="contractAmount" placeholder="Enter Total Contract Amount" required>
+                               <input type="text" id="totalContractAmount" name="totalContractAmount" placeholder="Enter Total Contract Amount" required>
                            </div>
                            <div class = "input-field">
-                            <label>Original Timeline</label>
-                            <input type="text" id="consultantName" name="consultantName" placeholder="Enter Original Timeline" required>
-                        </div>
+                            <label>Original Duration</label>
+                            <input type="text" id="originalDuration" name="originalDuration" placeholder="Enter Original Duration" required>
+													</div>
+													<!-- 
                         <div class = "input-field">
                             <label>Project Consultant Name</label>
                             <input type="text" id="consultantName" name="consultantName" placeholder="Enter Consultant's Name" required>
                         </div>
+													-->
+
                            <div class="input-field">
-                               <label>Approved Revised Contract</label>
-                               <input type="text" id="amountPaid" name="amountPaid" placeholder="Enter Approved Reveised Contract" required>
+                               <label>Approved Revised Amount</label>
+                               <input type="text" id="revisedAmount" name="revisedAmount" placeholder="Enter Approved Revised Amount" required>
                            </div>
+
+                           <div class="input-field">
+                               <label>Physical works completed</label>
+                               <input type="text" id="physicalWorksCompleted" name="physicalWorksCompleted" placeholder="Enter physical works completed" required>
+                           </div>
+                           <div class="input-field">
+                               <label>Time extension months</label>
+                               <input type="text" id="timeExtensionMonths" name="timeExtensionMonths" placeholder="">
+                           </div>
+
+                           <div class="input-field">
+                               <label>Approved cost</label>
+                               <input type="text" id="approvedAmount" name="approvedAmount" placeholder="">
+                           </div>
+
+                           <div class="input-field">
+                               <label>Expected completion date</label>
+                               <input type="date" id="expectedCompletionDate" name="expectedCompletionDate" placeholder="">
+                           </div>
+													<!-- 
+													-->
                        </div>
                        <button class="nextBtn" id="submit" form="projectform" onclick="save()">
                            <span class="btnText">Save</span>
@@ -130,5 +161,7 @@
                </div>
            </form>
         </div>
+
+				<script src="../javascript/updateForm.js"></script>
     </body>
 </html>
