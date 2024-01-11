@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const bodyParser = require("body-parser");
 const readExcel = require("read-excel-file");
-const { postDataToTable, getTableData, getTableItem } = require("./db");
+const { postDataToTable, getTableData, getTableItem, updateRowData, GSCSPprojects } = require("./db");
 
 
 console.log("env data ", process.env.PROJECT_TABLES);
@@ -70,7 +70,7 @@ app.post("/projects/:table_name", (req, res) => {
 });
 
 app.put("/api/update/projects/:table_name/:row_id", updateRowData);
-
+app.get("/api/getGSCSPprojects", GSCSPprojects);
 // Start the Express server
 app.listen(port, () => {
 	console.log(`Server is running on http://localhost:${port}`);

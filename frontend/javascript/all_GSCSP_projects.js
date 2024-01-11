@@ -7,7 +7,7 @@ console.log($tableBody); // Corrected parentheses
 
 async function getTableData() {
   try {
-    const response = await fetch("http://localhost:3000/projects/Udg_1", {
+    const response = await fetch("http://localhost:3000/api/getGSCSPprojects", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
