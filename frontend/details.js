@@ -1,4 +1,4 @@
-const rowId = new URLSearchParams(window.location.search).get("id");
+//const rowId = new URLSearchParams(window.location.search).get("id");
 const $tableBody = window.document.querySelector("#detailedData"); // html selector
 const $project_name = window.document.querySelector("#project_name");
 const $region = window.document.querySelector("#region");
