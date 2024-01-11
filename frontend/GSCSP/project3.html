@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,600,0,0" />
         <!-- stylesheet -->
         <link rel="stylesheet" href="./style2.css">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./style1.css">
     </head>
     <body>
         <div class="container">
@@ -50,11 +52,14 @@
                 </a>
             </aside>
             <!------------- END OF ASIDE --------------->
-            <main>
                 <main>
                     <h1>GSCSP Project PIU</h1>
                     <div class ="date">
                         <input type="date" id="currentDateInput">
+                        <div class = "input-field">
+                            <label>Search</label>
+                            <input type="text" id="search-bar" placeholder="Search Here">
+                        </div>
                     </div>
                     <div class="insights">
                         <div class="sales">
@@ -122,9 +127,44 @@
                             </a>
                         </div>
                     </div>
+                    <div class="recent-orders">
+                        <h2>All GSCSP PROJECTS</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Project Location</th>
+                                    <th>Contractor</th>
+                                    <th>Completion Date</th>
+                                    <th>Municipal Assembly</th>
+                                    <th>Contract Amount</th>
+                                    <th>status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="all">
+                                <tr>
+                                    <td>New Market sheds</td>
+                                    <td>2</td>
+                                    <td>settled</td>
+                                    <td class="success">Finished</td>
+                                    <td class="primary">Details</td>
+                                </tr>
+                                <tr>
+                                    <td>New Hospitals</td>
+                                    <td>Labone</td>
+                                    <td class = "danger">Not Completed</td>
+                                    <td class="success">Finished</td>
+                                    <td class="primary">Details</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="#">Show All</a>
                     </div>
+                    </div>
+                    
             </main>
         </div>
         <script src="../dashboard.js"></script>
+        <script src="../javascript/all_GSCSP_projects.js"></script>
     </body>
 </html>
