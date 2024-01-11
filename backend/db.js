@@ -1,3 +1,4 @@
+const e = require("express");
 const sqlite3 = require("sqlite3");
 const db = new sqlite3.Database("mydatabase.db");
 const AllTables = process.env.PROJECT_TABLES.split(" ");
@@ -159,4 +160,27 @@ function updateRowData(req, res) {
 	);
 }
 
-module.exports = { getTableData, postDataToTable, getTableItem, updateRowData };
+function getAllTableData(table_name) {
+	return new Promise((Resolve, Reject) => {
+		db.all(`SELECT * FROM ${table_name} `, (err, rows) => {
+			if (err) {
+				return Reject(err);
+			}
+			console.log(rows);
+			return Resolve(rows);
+		});
+	});
+}
+ 
+async function GSCSPprojects(req, res){
+try{
+	const Udg_1 = await getAllTableData("UDG_1")
+	const UDG_2 = await getAllTableData("UDG_2")
+	const UDG_3 = await getAllTableData("UDG_3")
+	return res.status(200).json([...Udg_1,...UDG_2,...UDG_3])
+}catch(e){
+	console.log(e)
+	res.status(500).json({"error": "Internal Server Error"})
+}
+}
+module.exports = { getTableData, postDataToTable, getTableItem, updateRowData, GSCSPprojects };
