@@ -11,7 +11,7 @@ console.log({$tableBody})
 async function getTableData() {
 	try {
 		// make api request
-		const data = await fetch("http://localhost:3000/projects/UDG_1", {
+		const data = await fetch("http://localhost:3000/projects/GPSNP", {
 			method: "GET",
 			headers: {
 				"content-type": "application/json",
@@ -27,7 +27,7 @@ async function getTableData() {
 			console.log("response data ", content);
 			tableData = content.filter((element) => {
 				// Filter based on project_name property containing "Market"
-				return element.Project_name.includes("Storm Water Drain");
+				return element.Project_Name.includes("Road");
 			});
 			createNewTable(tableData);
 			
@@ -43,7 +43,7 @@ function filterTable({target}) {
    
 	const the_value = target.value.toLowerCase();
 	const searchedData = tableData.filter((v)=>{
-		return v.Municipal_Assembly.toLowerCase().includes(the_value) || v.Region.toLowerCase().includes(the_value) || v.Status.toLowerCase().includes(the_value);
+		return v.Assembly.toLowerCase().includes(the_value) || v.Zone.toLowerCase().includes(the_value) || v.Status.toLowerCase().includes(the_value);
 	})
 	
 	createNewTable(searchedData);
@@ -60,7 +60,7 @@ function filterTable({target}) {
 getTableData();
 
 const jl = (row_id)=>{
-	window.localStorage.setItem("table_to_update", "UDG_1");
+	window.localStorage.setItem("table_to_update", "GPSNP");
 	window.localStorage.setItem("row_id", row_id);
 	window.location.href="details.html";
 };
@@ -70,12 +70,10 @@ function createNewTable (temp_data){
 	temp_data.forEach((element) => {
 		//$tableBody.innerHTML+=`<tr onclick="window.location.href='details.html'">
 		$tableBody.innerHTML+=`<tr onclick="jl(${element.id})">
-		<td>${element.Project_name}</td>
-		<td>${element.Region}</td>
-		<td>${element.contractor}</td>
-		<td>${element.revised_Completion_Date}</td>
-		<td>${element.Municipal_Assembly}</td>
-		<td>${element.Approved_Cost}</td>
+		<td>${element.Project_Name}</td>
+		<td>${element.Zone}</td>
+		<td>${element.Sub_Project}</td>
+		<td>${element.Assembly}</td>
 		<td>${element.Status}</td>
 		<td>
 		<button class="button">Update</button>

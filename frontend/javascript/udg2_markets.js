@@ -29,8 +29,8 @@ async function getTableData() {
 				// Filter based on project_name property containing "Market"
 				return element.Project_name.includes("Market");
 			});
-			createNewTable(tableData);
-			
+	createNewTable(tableData);
+	console.log({tableData})		
 		}
 	} catch (err) {
 		// an error in the request.
@@ -72,11 +72,11 @@ function createNewTable (temp_data){
 		$tableBody.innerHTML+=`<tr onclick="jl(${element.id})">
 		<td>${element.Project_name}</td>
 		<td>${element.Region}</td>
-		<td>${element.contractor}</td>
-		<td>${element.Revised_Cost}</td>
+		<td>${element.Project_description}</td>
+		<td>${element.revised_Completion_Date}</td>
 		<td>${element.Municipal_Assembly}</td>
-		<td>${element.Description_of_Contract}</td>
 		<td>${element.Approved_Cost}</td>
+		<td>${element.Status}</td>
 		<td>
 		<button class="button">Update</button>
 	</td>

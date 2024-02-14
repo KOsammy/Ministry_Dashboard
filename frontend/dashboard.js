@@ -19,6 +19,7 @@ function filterTable() {
       }
     }
   }
+ 
  // const searchBar = document.getElementById("search-bar");
 //searchBar.addEventListener("keydown", filterTable);
 // console.log({searchBar})

@@ -28,12 +28,12 @@ async function getTableData() {
 			filteredContent.forEach((element) => {
 					$tableBody.innerHTML+=`<tr onclick="window.location.href='details.html'">
 					<td>${element.Project_name}</td>
-					<td>${element.Region}</td>
-					<td>${element.contractor}</td>
-					<td>${element.Revised_Cost}</td>
-					<td>${element.Municipal_Assembly}</td>
-					<td>${element.Description_of_Contract}</td>
-					<td>${element.Approved_Cost}</td>
+		<td>${element.Region}</td>
+		<td>${element.Project_description}</td>
+		<td>${element.revised_Completion_Date}</td>
+		<td>${element.Municipal_Assembly}</td>
+		<td>${element.Approved_Cost}</td>
+		<td>${element.Status}</td>
 					<td>
 					<button class="button">Update</button>
 				</td>

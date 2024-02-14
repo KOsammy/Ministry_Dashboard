@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,600,0,0" />
     <!-- stylesheet -->
     <link rel="stylesheet" href="./style.css">
+    <style>
+        #map{
+            height: 700;
+            width: 500;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -69,16 +75,13 @@
                 <input type="date" id="currentDateInput">
             </div>
             <div class="recent-orders">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.1019799486735!2d-0.20004642679391682!3d5.551897733694634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf909aa2a79e8d%3A0x21872b400fa2fcc7!2sMinistry%20of%20Local%20Government%2C%20Decentralization%20%26%20Rural%20Development!5e0!3m2!1sen!2sgh!4v1705308906465!5m2!1sen!2sgh" 
-                width="1200" 
-                height="450"
-                 style="border:0;" 
-                 allowfullscreen="" 
-                 loading="lazy" 
-                 referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div id="map"></div>
+                
+               <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtoOncR3AvpvEDlnJJ8u4bVynMQh-W57s&callback=initMap"></script>
             </div>
         </main>
     </div>
+   
 </body>
-<script src="dashboard.js"></script>
+<script src="./dashboard.js"></script>
 </html>

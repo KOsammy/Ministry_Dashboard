@@ -6,10 +6,23 @@ const AllTables = process.env.PROJECT_TABLES.split(" ");
 db.serialize(() => {
 	//create tables for each of the table names specified.
 	AllTables.forEach((table_name) => {
+		
+		if(table_name.includes('SOCO')){
+			db.run(
+				`CREATE TABLE IF NOT EXISTS ${table_name} (id INTEGER PRIMARY KEY, ASsEMBLY,LOT,TPYE,DESCRIPTION_OF_SUBPROJECT,RECOMMENDED_BIDDER, BID_PRICE, CONTRACT_SUM)`
+	)}
+	if(table_name.includes('GPSNP')){
 		db.run(
-			`create table if not exists ${table_name} (id int Auto_increment, Region text, Municipal_Assembly text, type text, Project_description text, Project_name text,  contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text, Approved_Cost text, Revised_Cost text,  Physical_Works_Completed text, Status text,	Start Date text, Original_Duration mths text, Expected_Completion_Date text, Completion_Date Approved text, Time_Extension_mths text, revised_Completion_Date text)`
-		);
+			`CREATE TABLE IF NOT EXISTS ${table_name} (id int PRIMARY KEY, Zone, Assembly, Project_Name, Sub_Project, Status)`
+		)
+	}
+else{
+	db.run(
+		`create table if not exists ${table_name} (id int Auto_increment, Region text, Municipal_Assembly text, type text, Project_description text, Project_name text, Lot_No text,  contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text, Approved_Cost text, Revised_Cost text,  Physical_Works_Completed text, Status text,	Start Date text, Original_Duration mths text, Expected_Completion_Date text, Completion_Date Approved text, Time_Extension_mths text, revised_Completion_Date text)`
+	);
+}
 	});
+
 });
 
 //function to post data to a table based on the table name
