@@ -179,7 +179,7 @@ function getAllTableData(table_name) {
 			if (err) {
 				return Reject(err);
 			}
-			console.log(rows);
+			//console.log(rows);
 			return Resolve(rows);
 		});
 	});

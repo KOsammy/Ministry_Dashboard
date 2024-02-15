@@ -41,7 +41,7 @@ app.get("/projects/:table_name/:project_id", (req, res) => {
 
 app.post("/api/check-updates", (req, res)=>{
 	const {file} = req.body;			
-	console.log({file}, req.body, req.files);
+	//console.log({file}, req.body, req.files);
 })
 
 app.post("/projects/:table_name", (req, res) => {
