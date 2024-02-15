@@ -81,4 +81,4 @@ function createNewTable (temp_data){
 };
 
 
-//searchBar.addEventListener("keydown", filterTable);
+searchBar.addEventListener("keydown", filterTable);
