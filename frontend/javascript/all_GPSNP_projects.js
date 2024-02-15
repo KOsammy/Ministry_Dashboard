@@ -7,7 +7,7 @@ let tableData = [];
 
 
 
-console.log({$tableBody})
+//console.log({$tableBody})
 async function getTableData() {
 	try {
 		// make api request
@@ -24,7 +24,8 @@ async function getTableData() {
 		} else {
 			// if the request method passes
 			const content = await data.json();
-			console.log("response data ", content);
+			tableData = content;
+			console.log("response data ", tableData);
 			
 			createNewTable(tableData);
 			
