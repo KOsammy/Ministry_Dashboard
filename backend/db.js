@@ -6,23 +6,21 @@ const AllTables = process.env.PROJECT_TABLES.split(" ");
 db.serialize(() => {
 	//create tables for each of the table names specified.
 	AllTables.forEach((table_name) => {
-		
-		if(table_name.includes('SOCO')){
+		if (table_name.includes("SOCO")) {
 			db.run(
 				`CREATE TABLE IF NOT EXISTS ${table_name} (id INTEGER PRIMARY KEY, ASsEMBLY,LOT,TPYE,DESCRIPTION_OF_SUBPROJECT,RECOMMENDED_BIDDER, BID_PRICE, CONTRACT_SUM)`
-	)}
-	if(table_name.includes('GPSNP')){
-		db.run(
-			`CREATE TABLE IF NOT EXISTS ${table_name} (id int PRIMARY KEY, Zone, Assembly, Project_Name, Sub_Project, Status)`
-		)
-	}
-else{
-	db.run(
-		`create table if not exists ${table_name} (id int Auto_increment, Region text, Municipal_Assembly text, type text, Project_description text, Project_name text, Lot_No text,  contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text, Approved_Cost text, Revised_Cost text,  Physical_Works_Completed text, Status text,	Start Date text, Original_Duration mths text, Expected_Completion_Date text, Completion_Date Approved text, Time_Extension_mths text, revised_Completion_Date text)`
-	);
-}
+			);
+		}
+		if (table_name.includes("GPSNP")) {
+			db.run(
+				`CREATE TABLE IF NOT EXISTS ${table_name} (id int PRIMARY KEY, Zone, Assembly, Project_Name, Sub_Project, Status)`
+			);
+		} else {
+			db.run(
+				`create table if not exists ${table_name} (id int Auto_increment, Region text, Municipal_Assembly text, type text, Project_description text, Project_name text, Lot_No text,  contractor text, Description_of_Contract text, Total_Contract_Amount_GH₵ text, Approved_Cost text, Revised_Cost text,  Physical_Works_Completed text, Status text,	Start Date text, Original_Duration mths text, Expected_Completion_Date text, Completion_Date Approved text, Time_Extension_mths text, revised_Completion_Date text)`
+			);
+		}
 	});
-
 });
 
 //function to post data to a table based on the table name
@@ -102,6 +100,37 @@ function getTableItem(table_name, id) {
 		});
 	});
 }
+
+function countTable(tableName) {
+	return new Promise((Resolve, Reject) => {
+		db.get(`SELECT COUNT(*) total from ${tableName}`, (err, {total}) => {
+			if (err) return Reject(err);
+			console.log({total});
+			return Resolve(total);
+		});
+	});
+}
+
+countTable("UDG_1");
+
+function completedPercentage(tableName) {
+	return new Promise((Resolve, Reject) => {
+		db.get(
+			`
+			 SELECT COUNT(*) completed FROM ${tableName} 
+ WHERE Status = 'Completed'`,
+			(err, { completed }) => {
+				if (err) return Reject(err);
+				db.get(`SELECT COUNT(*) total FROM ${tableName}`, (err1, { total }) => {
+					if (err1) return Reject(err1);
+					return Resolve(Math.round((completed / total) * 100));
+				});
+			}
+		);
+	});
+}
+
+//completedPercentage("UDG_1");
 
 function updateRowData(req, res) {
 	const { table_name, row_id } = req.params;
@@ -184,16 +213,25 @@ function getAllTableData(table_name) {
 		});
 	});
 }
- 
-async function GSCSPprojects(req, res){
-try{
-	const Udg_1 = await getAllTableData("UDG_1")
-	const UDG_2 = await getAllTableData("UDG_2")
-	const UDG_3 = await getAllTableData("UDG_3")
-	return res.status(200).json([...Udg_1,...UDG_2,...UDG_3])
-}catch(e){
-	console.log(e)
-	res.status(500).json({"error": "Internal Server Error"})
+
+async function GSCSPprojects(req, res) {
+	try {
+		const Udg_1 = await getAllTableData("UDG_1");
+		const UDG_2 = await getAllTableData("UDG_2");
+		const UDG_3 = await getAllTableData("UDG_3");
+		return res.status(200).json([...Udg_1, ...UDG_2, ...UDG_3]);
+	} catch (e) {
+		console.log(e);
+		res.status(500).json({ error: "Internal Server Error" });
+	}
 }
-}
-module.exports = { getTableData, postDataToTable, getTableItem, updateRowData, GSCSPprojects };
+
+module.exports = {
+	getTableData,
+	postDataToTable,
+	getTableItem,
+	updateRowData,
+	GSCSPprojects,
+completedPercentage,
+countTable,
+};
