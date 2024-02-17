@@ -77,4 +77,60 @@ function filterTable({ target }) {
 	// }
 }
 
+// set count and percentage of projects.
+	async function countAndPercentage(){
+		try{
+			// count the udg tables 
+			const udg_1Count = await fetch("http://localhost:3000/api/countTable?tableName=UDG_1");
+			if (udg_1Count.status == 200){
+				const count_body1 = await udg_1Count.json();
+				console.log({count_body1});
+				window.document.querySelector("#udg1_count").innerHTML =  "Total: "+count_body1; 
+			} else  console.error("Failed to make count for udg1", udg_1Count);
+
+			const udg_2Count = await fetch("http://localhost:3000/api/countTable?tableName=UDG_2");
+			if (udg_2Count.status == 200){
+				const count_body2 = await udg_2Count.json();
+				console.log({count_body2});
+				window.document.querySelector("#udg2_count").innerHTML =  "Total: "+count_body2; 
+			} else  console.error("Failed to make count for udg1", udg_2Count);
+
+			const udg_3Count = await fetch("http://localhost:3000/api/countTable?tableName=UDG_3");
+			if (udg_3Count.status == 200){
+				const count_body3 = await udg_3Count.json();
+				console.log({count_body3});
+				window.document.querySelector("#udg3_count").innerHTML =  "Total: "+count_body3; 
+			} else  console.error("Failed to make count for udg1", udg_3Count);
+
+
+			// percentages for all udg tables.
+			const udg_1Completed = await fetch("http://localhost:3000/api/completedPercentage?tableName=UDG_1");
+			if (udg_1Completed.status == 200){
+				const completed_body1 = await udg_1Completed.json();
+				console.log({completed_body1});
+				window.document.querySelector("#udg1_completed_status").innerHTML =  "<b>"+completed_body1 +"% completed</b>"
+			} else  console.error("Failed to make count for udg1", udg_1Completed);
+
+			const udg_2Completed = await fetch("http://localhost:3000/api/completedPercentage?tableName=UDG_2");
+			if (udg_2Completed.status == 200){
+				const completed_body2 = await udg_2Completed.json();
+				console.log({completed_body2});
+				window.document.querySelector("#udg2_completed_status").innerHTML =  "<b>"+completed_body2 +"% completed</b>"
+			} else  console.error("Failed to make count for udg1", udg_2Completed);
+
+			const udg_3Completed = await fetch("http://localhost:3000/api/completedPercentage?tableName=UDG_3");
+			if (udg_3Completed.status == 200){
+				const completed_body3 = await udg_3Completed.json();
+				console.log({completed_body3});
+				window.document.querySelector("#udg3_completed_status").innerHTML = "<b>"+completed_body3 +"% completed</b>"
+			} else  console.error("Failed to make count for udg1", udg_3Completed);
+		}catch(e){
+			console.error("Failed to perform count!");
+			console.error(e);
+		}
+
+	};
+
+
 getTableData();
+countAndPercentage();

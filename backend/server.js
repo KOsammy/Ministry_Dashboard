@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const bodyParser = require("body-parser");
 const readExcel = require("read-excel-file");
-const { postDataToTable, getTableData, getTableItem, updateRowData, GSCSPprojects } = require("./db");
+const { postDataToTable, getTableData, getTableItem, updateRowData, GSCSPprojects, countTable, completedPercentage } = require("./db");
 
 
 console.log("env data ", process.env.PROJECT_TABLES);
@@ -71,6 +71,21 @@ app.post("/projects/:table_name", (req, res) => {
 
 app.put("/api/update/projects/:table_name/:row_id", updateRowData);
 app.get("/api/getGSCSPprojects", GSCSPprojects);
+
+// percentage of completed projects.
+app.get("/api/completedPercentage", async(req, res)=>{
+	const {tableName} = req.query;
+	const ans =await completedPercentage(tableName);
+	return res.status(200).json(ans);
+})
+
+// count the contents in a table
+app.get("/api/countTable", async(req, res)=>{
+	const {tableName} = req.query;
+	const ans =await countTable(tableName);
+	return res.status(200).json(ans);
+})
+
 // Start the Express server
 app.listen(port, () => {
 	console.log(`Server is running on http://localhost:${port}`);
