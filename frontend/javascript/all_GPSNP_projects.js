@@ -64,9 +64,10 @@ const jl = (row_id)=>{
 };
 
 function createNewTable (temp_data){
-	
+	$tableBody.innerHTML=null;
 	temp_data.forEach((element) => {
 		//$tableBody.innerHTML+=`<tr onclick="window.location.href='details.html'">
+		
 		$tableBody.innerHTML+=`<tr onclick="jl(${element.id})">
 		<td>${element.Project_Name}</td>
 		<td>${element.Zone}</td>
